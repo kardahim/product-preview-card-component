@@ -1,17 +1,31 @@
 <template>
   <div class="card">
-    <div class="card__image-holder">
+    <!-- <div class="card__image-holder">
       <img
         src="./assets/images/image-product-desktop.jpg"
         alt="perfume image"
       />
-    </div>
+    </div> -->
+    <picture class="card__image-holder">
+      <source
+        media="(min-width: 650px)"
+        srcset="./assets/images/image-product-desktop.jpg"
+      />
+      <source
+        media="(max-width: 650px)"
+        srcset="./assets/images/image-product-mobile.jpg"
+      />
+      <img
+        src="./assets/images/image-product-desktop.jpg"
+        alt="perfume image"
+      />
+    </picture>
     <div class="card__info">
       <div class="card__info__category">perfume</div>
       <h1 class="card__info__header">gabrielle essence eau de parfum</h1>
       <p class="card__info__body">
-        A floral, solar and voluptuous interpretation composed by <br />Olivier
-        Polge, Perfumer-Creator for the House of CHANEL.
+        A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.
       </p>
       <div class="card__info__price">
         <div class="card__info__price__current">${{ currentPrice }}</div>
@@ -55,11 +69,15 @@ export default defineComponent({
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $background-color;
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 25px;
+  }
 }
 
 #app {
@@ -70,6 +88,11 @@ body {
     border-radius: 8px;
 
     display: flex;
+    @media screen and (max-width: $mobile-width) {
+      flex-direction: column;
+      width: auto;
+      height: auto;
+    }
 
     &__image-holder {
       width: 50%;
@@ -78,6 +101,15 @@ body {
         height: 100%;
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;
+
+        @media screen and (max-width: $mobile-width) {
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 8px;
+        }
+      }
+
+      @media screen and (max-width: $mobile-width) {
+        width: 100%;
       }
     }
 
@@ -86,6 +118,10 @@ body {
       padding: 32px;
       color: $body-color;
       font-size: $fs-body;
+
+      @media screen and (max-width: $mobile-width) {
+        width: 100%;
+      }
 
       &__category {
         text-transform: uppercase;
