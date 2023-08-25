@@ -1,11 +1,5 @@
 <template>
   <div class="card">
-    <!-- <div class="card__image-holder">
-      <img
-        src="./assets/images/image-product-desktop.jpg"
-        alt="perfume image"
-      />
-    </div> -->
     <picture class="card__image-holder">
       <source
         media="(min-width: 650px)"
