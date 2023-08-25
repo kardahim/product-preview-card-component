@@ -1,24 +1,12 @@
-# product-preview-card-component
+# Frontend Mentor - Product Preview Card Component
 
-## Project setup
-```
-npm install
-```
+![Desktop preview](./src/assets/previews/desktop_preview.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Description
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Thanks for checking out this front-end coding challenge from the frontend mentor. This component is made with **_Vue_**, **_Scss_** and **_BEM_** methodology.
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Features
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- dynamically change image while resizing
+- mobile device supports
